@@ -5,7 +5,7 @@ public class Solution {
         int digit;
         while(b!=0) {
             digit = a&b;       //a&b求出相同的位
-            a = a^b;            //异或即不带进位的相加，第二次循环开始b就是代表进位，即加上进位，一直到没有进位的时候就完成了加法
+            a = a^b;           //异或，对应位不同的相加，相同的置0，因为进1后为0
             b = digit << 1;    //相同的位左移一位，代表加法中的进位
         }
         return a;
